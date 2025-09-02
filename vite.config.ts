@@ -21,16 +21,6 @@ export default defineConfig({
     port: 5173,
   },
   build: {
-    outDir: 'dist',
-    // 内联较小的资源
-    assetsInlineLimit: 4096, // 4kb以下的文件将内联为base64
-    rollupOptions: {
-      output: {
-        // 确保资源使用相对路径
-        assetFileNames: 'assets/[name]-[hash][extname]',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        entryFileNames: 'assets/[name]-[hash].js',
-      }
-    }
+    outDir: 'dist'
   },
 })
