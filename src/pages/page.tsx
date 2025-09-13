@@ -39,7 +39,7 @@ export default function MainRechargePage() {
   ]
 
   // 添加随机延迟函数
-  const getRandomDelay = (min: number = 300, max: number = 1300): number => {
+  const getRandomDelay = (min: number = 300, max: number = 1000): number => {
     return min + Math.floor(Math.random() * (max - min + 1))
   }
 
