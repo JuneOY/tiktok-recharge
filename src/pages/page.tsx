@@ -38,6 +38,11 @@ export default function MainRechargePage() {
     { coins: 3500, price: 36.2 },
   ]
 
+  // 添加随机延迟函数
+  const getRandomDelay = (min: number = 300, max: number = 1300): number => {
+    return min + Math.floor(Math.random() * (max - min + 1))
+  }
+
   const handleBuyClick = () => {
     setIsLoading(true)
     setCurrentOrderCoins(coinPackages[selectedPackage].coins)
@@ -45,7 +50,7 @@ export default function MainRechargePage() {
     setTimeout(() => {
       setIsLoading(false)
       setShowPaymentDrawer(true)
-    }, 2000)
+    }, getRandomDelay())
   }
 
   const handleCloseDrawer = () => {
@@ -75,7 +80,7 @@ export default function MainRechargePage() {
       setCurrentOrderCoins(coins)
       setCurrentOrderPrice(price)
       setShowPaymentDrawer(true)
-    }, 2000)
+    }, getRandomDelay())
   }
 
   const handlePayNow = () => {
@@ -85,7 +90,7 @@ export default function MainRechargePage() {
       setIsPayNowLoading(false)
       setShowPaymentDrawer(false)
       setShowSuccessPage(true)
-    }, 2000)
+    }, getRandomDelay())
   }
 
   const handleGoBack = () => {
